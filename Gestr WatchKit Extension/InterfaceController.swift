@@ -8,10 +8,13 @@
 
 import WatchKit
 import Foundation
-
+import CoreMotion
 
 class InterfaceController: WKInterfaceController {
-
+    @IBOutlet var headingLabel: WKInterfaceLabel!
+    @IBOutlet var gravityLabel: WKInterfaceLabel!
+    @IBOutlet var attituteLabel: WKInterfaceLabel!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -21,6 +24,8 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        WKExtension.shared().isFrontmostTimeoutExtended = true
+        WKInterfaceDevice.current().play(.start)
     }
     
     override func didDeactivate() {

@@ -1,14 +1,35 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Gestr_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="J0o-0L-DjA">
+                            <items>
+                                <label alignment="left" text="Heading: 0.333" id="tbF-jf-mWY"/>
+                                <label alignment="left" text="Gravity:" id="Kza-w0-HbI"/>
+                                <label alignment="left" text="(x:0.33,y:0.33,z:0.33)" id="ykf-BE-utn"/>
+                                <label alignment="left" text="Attitute" id="m6T-hH-chg"/>
+                                <label alignment="left" text="(p:0.33,r:0.33,y:0.33)" id="XT4-Hv-s1j"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="attituteLabel" destination="XT4-Hv-s1j" id="fwO-gc-tO5"/>
+                        <outlet property="gravityLabel" destination="ykf-BE-utn" id="tbf-Mp-BDA"/>
+                        <outlet property="headingLabel" destination="tbF-jf-mWY" id="1sU-hh-0ls"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>

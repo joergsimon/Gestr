@@ -20,6 +20,10 @@
 		A9327FC91F936AF2000A2B0B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FC81F936AF2000A2B0B /* InterfaceController.swift */; };
 		A9327FCB1F936AF2000A2B0B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FCA1F936AF2000A2B0B /* ExtensionDelegate.swift */; };
 		A9327FCD1F936AF2000A2B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9327FCC1F936AF2000A2B0B /* Assets.xcassets */; };
+		A9327FE11F936BE5000A2B0B /* DeviceMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FE01F936BE5000A2B0B /* DeviceMotionExtension.swift */; };
+		A9327FE21F93707D000A2B0B /* DeviceMotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FE01F936BE5000A2B0B /* DeviceMotionExtension.swift */; };
+		A9327FE41F93708C000A2B0B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FE31F93708C000A2B0B /* Utils.swift */; };
+		A99CF82E1F97F5E800553FE5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327FE31F93708C000A2B0B /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,8 @@
 		A9327FCA1F936AF2000A2B0B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A9327FCC1F936AF2000A2B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9327FCE1F936AF2000A2B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9327FE01F936BE5000A2B0B /* DeviceMotionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionExtension.swift; sourceTree = "<group>"; };
+		A9327FE31F93708C000A2B0B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		A9327F8E1F936AF1000A2B0B = {
 			isa = PBXGroup;
 			children = (
+				A9327FDF1F936BCF000A2B0B /* shared */,
 				A9327F991F936AF2000A2B0B /* Gestr */,
 				A9327FAE1F936AF2000A2B0B /* GestrTests */,
 				A9327FB81F936AF2000A2B0B /* Gestr WatchKit App */,
@@ -181,6 +188,15 @@
 				A9327FCE1F936AF2000A2B0B /* Info.plist */,
 			);
 			path = "Gestr WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A9327FDF1F936BCF000A2B0B /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				A9327FE01F936BE5000A2B0B /* DeviceMotionExtension.swift */,
+				A9327FE31F93708C000A2B0B /* Utils.swift */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9327F9D1F936AF2000A2B0B /* ViewController.swift in Sources */,
+				A9327FE11F936BE5000A2B0B /* DeviceMotionExtension.swift in Sources */,
 				A9327F9B1F936AF2000A2B0B /* AppDelegate.swift in Sources */,
+				A9327FE41F93708C000A2B0B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +385,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9327FCB1F936AF2000A2B0B /* ExtensionDelegate.swift in Sources */,
+				A9327FE21F93707D000A2B0B /* DeviceMotionExtension.swift in Sources */,
 				A9327FC91F936AF2000A2B0B /* InterfaceController.swift in Sources */,
+				A99CF82E1F97F5E800553FE5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
