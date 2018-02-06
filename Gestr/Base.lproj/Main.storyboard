@@ -1,24 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmK-FE-5DD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="jj3-U5-YEf">
+            <objects>
+                <navigationController id="LmK-FE-5DD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dNn-7d-1U2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KPq-CS-7MG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r41-OF-1ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-876" y="134"/>
+        </scene>
+        <!--Logger-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogViewController" customModule="Gestr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMr-JO-710">
+                                <rect key="frame" x="16" y="280.5" width="343" height="366.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQX-bV-kFe">
+                                <rect key="frame" x="16" y="252" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WBk-zH-Qtx">
+                                <rect key="frame" x="16" y="64" width="343" height="180"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-kn-8Ib">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-ae-Eht">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="start next"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYW-bw-Axp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v62-9j-z0h">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="stop next"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5L-ET-E3R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gJO-ae-Eht" firstAttribute="width" secondItem="v62-9j-z0h" secondAttribute="width" id="kkY-Sl-WvV"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4P-4I-OvZ">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VY-pl-QjV">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="start prev"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFu-Qx-tdd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmE-nf-J4N">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="stop prev"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xi4-Yu-53h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1VY-pl-QjV" firstAttribute="width" secondItem="lmE-nf-J4N" secondAttribute="width" id="l35-Jo-7uC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hda-z3-zkh">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-QV-iK9">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="start init"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufQ-au-y6S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waS-Al-zdb">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="stop init"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30j-Sd-94F"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="v5L-QV-iK9" firstAttribute="width" secondItem="waS-Al-zdb" secondAttribute="width" id="7b1-Rb-P5e"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-0d-eN8">
+                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUf-IU-e01">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="start pause"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7u-3s-ald"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT3-i8-FIj">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="stop pause"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAL-FS-svg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tUf-IU-e01" firstAttribute="width" secondItem="VT3-i8-FIj" secondAttribute="width" id="5cS-95-cEq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDV-Op-Ekv">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99D-xl-VQu">
+                                        <rect key="frame" x="0.0" y="150" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54X-mG-s0i">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="start lbl"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9X-GD-aWD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meD-bl-WpR">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <state key="normal" title="stop lbl"/>
+                                                <connections>
+                                                    <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O62-jr-8cZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="54X-mG-s0i" firstAttribute="width" secondItem="meD-bl-WpR" secondAttribute="width" id="kzh-dA-Fsl"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eMr-JO-710" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="IfJ-ze-i9U"/>
+                            <constraint firstItem="oQX-bV-kFe" firstAttribute="top" secondItem="WBk-zH-Qtx" secondAttribute="bottom" constant="8" id="RKC-ce-9eB"/>
+                            <constraint firstItem="WBk-zH-Qtx" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="RQn-Wv-boR"/>
+                            <constraint firstItem="oQX-bV-kFe" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="T8k-Wj-fdb"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="eMr-JO-710" secondAttribute="bottom" constant="20" id="dcs-eW-D19"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="eMr-JO-710" secondAttribute="trailing" constant="16" id="f1o-kE-Mnc"/>
+                            <constraint firstItem="eMr-JO-710" firstAttribute="top" secondItem="oQX-bV-kFe" secondAttribute="bottom" constant="8" id="f7r-Nf-05G"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="oQX-bV-kFe" secondAttribute="trailing" constant="16" id="khh-Hi-pNl"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="WBk-zH-Qtx" secondAttribute="trailing" constant="16" id="tdE-uQ-6TM"/>
+                            <constraint firstItem="WBk-zH-Qtx" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="zZx-ss-dgD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Logger" id="eZc-d6-ccy">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="I7N-Ny-miF">
+                            <connections>
+                                <action selector="share:" destination="BYZ-38-t0r" id="drZ-g3-FXy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cusomLabel" destination="UDV-Op-Ekv" id="Uw3-dw-6eZ"/>
+                        <outlet property="logView" destination="eMr-JO-710" id="HEa-e6-uS7"/>
+                        <outlet property="startCustomLabelButton" destination="54X-mG-s0i" id="Cvi-rJ-J0V"/>
+                        <outlet property="startInitButton" destination="v5L-QV-iK9" id="UBz-m8-3Ge"/>
+                        <outlet property="startNextButton" destination="gJO-ae-Eht" id="AaH-0h-I1o"/>
+                        <outlet property="startPauseButton" destination="tUf-IU-e01" id="BkX-e8-b1U"/>
+                        <outlet property="startPrevButton" destination="1VY-pl-QjV" id="SFa-jy-mmB"/>
+                        <outlet property="stopCustomLabelButton" destination="meD-bl-WpR" id="2IE-QJ-zky"/>
+                        <outlet property="stopInitButton" destination="waS-Al-zdb" id="p8I-yZ-yDx"/>
+                        <outlet property="stopNextButton" destination="v62-9j-z0h" id="3eK-WF-hgS"/>
+                        <outlet property="stopPauseButton" destination="VT3-i8-FIj" id="sLE-2a-7vu"/>
+                        <outlet property="stopPrevButton" destination="lmE-nf-J4N" id="gsS-b2-ckC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

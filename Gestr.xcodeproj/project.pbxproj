@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58308CB320292A940024C0AA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58308CB220292A940024C0AA /* HealthKit.framework */; };
+		58308CB620292AA50024C0AA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58308CB520292AA50024C0AA /* HealthKit.framework */; };
+		58597B052028ECC3008AE580 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B042028ECC3008AE580 /* WorkoutManager.swift */; };
+		58597B072028EDC6008AE580 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B062028EDC6008AE580 /* MotionManager.swift */; };
+		58597B092028F8E3008AE580 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B082028F8E3008AE580 /* Data.swift */; };
+		58597B0A2028F8E3008AE580 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B082028F8E3008AE580 /* Data.swift */; };
+		58597B0C2028F961008AE580 /* PartentConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B0B2028F961008AE580 /* PartentConnector.swift */; };
+		58597B0E2028FA75008AE580 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B0D2028FA75008AE580 /* RecordingManager.swift */; };
+		58597B102028FEA1008AE580 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B0F2028FEA1008AE580 /* Session.swift */; };
+		58597B12202904B7008AE580 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B11202904B7008AE580 /* Recorder.swift */; };
+		58597B1420291E66008AE580 /* GestrUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B1320291E66008AE580 /* GestrUtils.swift */; };
 		A9327F9B1F936AF2000A2B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */; };
-		A9327F9D1F936AF2000A2B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327F9C1F936AF2000A2B0B /* ViewController.swift */; };
+		A9327F9D1F936AF2000A2B0B /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327F9C1F936AF2000A2B0B /* LogViewController.swift */; };
 		A9327FA01F936AF2000A2B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9327F9E1F936AF2000A2B0B /* Main.storyboard */; };
 		A9327FA21F936AF2000A2B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9327FA11F936AF2000A2B0B /* Assets.xcassets */; };
 		A9327FA51F936AF2000A2B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9327FA31F936AF2000A2B0B /* LaunchScreen.storyboard */; };
@@ -76,9 +87,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		58308CB020292A940024C0AA /* Gestr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gestr.entitlements; sourceTree = "<group>"; };
+		58308CB220292A940024C0AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		58308CB420292AA50024C0AA /* Gestr WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Gestr WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		58308CB520292AA50024C0AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		58597B042028ECC3008AE580 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		58597B062028EDC6008AE580 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		58597B082028F8E3008AE580 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		58597B0B2028F961008AE580 /* PartentConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartentConnector.swift; sourceTree = "<group>"; };
+		58597B0D2028FA75008AE580 /* RecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
+		58597B0F2028FEA1008AE580 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		58597B11202904B7008AE580 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		58597B1320291E66008AE580 /* GestrUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestrUtils.swift; sourceTree = "<group>"; };
 		A9327F971F936AF2000A2B0B /* Gestr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A9327F9C1F936AF2000A2B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A9327F9C1F936AF2000A2B0B /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A9327F9F1F936AF2000A2B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9327FA11F936AF2000A2B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9327FA41F936AF2000A2B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58308CB320292A940024C0AA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +142,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58308CB620292AA50024C0AA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58308CB120292A940024C0AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58308CB520292AA50024C0AA /* HealthKit.framework */,
+				58308CB220292A940024C0AA /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9327F8E1F936AF1000A2B0B = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +167,7 @@
 				A9327FB81F936AF2000A2B0B /* Gestr WatchKit App */,
 				A9327FC71F936AF2000A2B0B /* Gestr WatchKit Extension */,
 				A9327F981F936AF2000A2B0B /* Products */,
+				58308CB120292A940024C0AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,12 +185,16 @@
 		A9327F991F936AF2000A2B0B /* Gestr */ = {
 			isa = PBXGroup;
 			children = (
+				58308CB020292A940024C0AA /* Gestr.entitlements */,
 				A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */,
-				A9327F9C1F936AF2000A2B0B /* ViewController.swift */,
+				A9327F9C1F936AF2000A2B0B /* LogViewController.swift */,
 				A9327F9E1F936AF2000A2B0B /* Main.storyboard */,
 				A9327FA11F936AF2000A2B0B /* Assets.xcassets */,
 				A9327FA31F936AF2000A2B0B /* LaunchScreen.storyboard */,
 				A9327FA61F936AF2000A2B0B /* Info.plist */,
+				58597B0F2028FEA1008AE580 /* Session.swift */,
+				58597B11202904B7008AE580 /* Recorder.swift */,
+				58597B1320291E66008AE580 /* GestrUtils.swift */,
 			);
 			path = Gestr;
 			sourceTree = "<group>";
@@ -182,10 +221,15 @@
 		A9327FC71F936AF2000A2B0B /* Gestr WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				58308CB420292AA50024C0AA /* Gestr WatchKit Extension.entitlements */,
 				A9327FC81F936AF2000A2B0B /* InterfaceController.swift */,
 				A9327FCA1F936AF2000A2B0B /* ExtensionDelegate.swift */,
 				A9327FCC1F936AF2000A2B0B /* Assets.xcassets */,
 				A9327FCE1F936AF2000A2B0B /* Info.plist */,
+				58597B0D2028FA75008AE580 /* RecordingManager.swift */,
+				58597B042028ECC3008AE580 /* WorkoutManager.swift */,
+				58597B062028EDC6008AE580 /* MotionManager.swift */,
+				58597B0B2028F961008AE580 /* PartentConnector.swift */,
 			);
 			path = "Gestr WatchKit Extension";
 			sourceTree = "<group>";
@@ -195,6 +239,7 @@
 			children = (
 				A9327FE01F936BE5000A2B0B /* DeviceMotionExtension.swift */,
 				A9327FE31F93708C000A2B0B /* Utils.swift */,
+				58597B082028F8E3008AE580 /* Data.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -286,6 +331,11 @@
 					A9327F961F936AF2000A2B0B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					A9327FAA1F936AF2000A2B0B = {
 						CreatedOnToolsVersion = 9.0;
@@ -299,6 +349,11 @@
 					A9327FC21F936AF2000A2B0B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -365,10 +420,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9327F9D1F936AF2000A2B0B /* ViewController.swift in Sources */,
+				58597B092028F8E3008AE580 /* Data.swift in Sources */,
+				58597B102028FEA1008AE580 /* Session.swift in Sources */,
+				A9327F9D1F936AF2000A2B0B /* LogViewController.swift in Sources */,
 				A9327FE11F936BE5000A2B0B /* DeviceMotionExtension.swift in Sources */,
 				A9327F9B1F936AF2000A2B0B /* AppDelegate.swift in Sources */,
+				58597B12202904B7008AE580 /* Recorder.swift in Sources */,
 				A9327FE41F93708C000A2B0B /* Utils.swift in Sources */,
+				58597B1420291E66008AE580 /* GestrUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9327FCB1F936AF2000A2B0B /* ExtensionDelegate.swift in Sources */,
+				58597B0E2028FA75008AE580 /* RecordingManager.swift in Sources */,
+				58597B072028EDC6008AE580 /* MotionManager.swift in Sources */,
+				58597B0C2028F961008AE580 /* PartentConnector.swift in Sources */,
+				58597B0A2028F8E3008AE580 /* Data.swift in Sources */,
 				A9327FE21F93707D000A2B0B /* DeviceMotionExtension.swift in Sources */,
+				58597B052028ECC3008AE580 /* WorkoutManager.swift in Sources */,
 				A9327FC91F936AF2000A2B0B /* InterfaceController.swift in Sources */,
 				A99CF82E1F97F5E800553FE5 /* Utils.swift in Sources */,
 			);
@@ -550,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Gestr WatchKit Extension/Gestr WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44J7Q83N7L;
 				INFOPLIST_FILE = "Gestr WatchKit Extension/Info.plist";
@@ -568,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Gestr WatchKit Extension/Gestr WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44J7Q83N7L;
 				INFOPLIST_FILE = "Gestr WatchKit Extension/Info.plist";
@@ -624,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gestr/Gestr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44J7Q83N7L;
 				INFOPLIST_FILE = Gestr/Info.plist;
@@ -639,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gestr/Gestr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44J7Q83N7L;
 				INFOPLIST_FILE = Gestr/Info.plist;

@@ -10,15 +10,31 @@ import WatchKit
 import Foundation
 import CoreMotion
 
-class InterfaceController: WKInterfaceController {
+func makeLine(_ data:[Double])->String {
+    let d = data.flatMap {String(format:"%.2f",$0) }.joined(separator: ",")
+    let dline = "(\(d))"
+    return dline
+}
+
+class InterfaceController: WKInterfaceController, RecordingManagerDelegate {
     @IBOutlet var headingLabel: WKInterfaceLabel!
     @IBOutlet var gravityLabel: WKInterfaceLabel!
     @IBOutlet var attituteLabel: WKInterfaceLabel!
     
+    @IBAction func stop() {
+        recordingManager.stop()
+    }
+    
+    @IBAction func start() {
+        recordingManager.start()
+    }
+    
+    let recordingManager = RecordingManager()
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        recordingManager.delegate = self
     }
     
     override func willActivate() {
@@ -32,5 +48,15 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    func manager(_ manager: RecordingManager, received data: CMDeviceMotion) {
+        let gline = makeLine(data.gravity.vector())
+        let aline = makeLine(data.attitude.vector())
+        DispatchQueue.main.async {
+            self.headingLabel.setText(String(data.heading))
+            self.gravityLabel.setText(gline)
+            self.attituteLabel.setText(aline)
+        }
+        
+    }
 }
