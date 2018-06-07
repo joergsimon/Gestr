@@ -35,15 +35,26 @@ class MotionManager {
         }
         
         motionManager.deviceMotionUpdateInterval = sampleInterval
-        motionManager.startDeviceMotionUpdates(using: .xArbitraryCorrectedZVertical, to: queue) { (deviceMotion: CMDeviceMotion?, error: Error?) in
+        motionManager.startDeviceMotionUpdates(to: queue) { (deviceMotion: CMDeviceMotion?, error: Error?) in
             if error != nil {
                 print("Encountered error: \(error!)")
             }
+//            print("debug: got device motion...")
             
             if let dM = deviceMotion {
                 self.processDeviceMotion(dM)
             }
         }
+//        motionManager.startDeviceMotionUpdates(using: .xArbitraryCorrectedZVertical, to: queue) { (deviceMotion: CMDeviceMotion?, error: Error?) in
+//            if error != nil {
+//                print("Encountered error: \(error!)")
+//            }
+//            print("debug: got device motion...")
+//
+//            if let dM = deviceMotion {
+//                self.processDeviceMotion(dM)
+//            }
+//        }
     }
     
     func stopUpdates() {

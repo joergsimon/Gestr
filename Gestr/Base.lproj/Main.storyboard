@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmK-FE-5DD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LmK-FE-5DD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KPq-CS-7MG"/>
+                        <segue destination="exX-5O-ciX" kind="relationship" relationship="rootViewController" id="3PE-b4-kMA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r41-OF-1ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,33 +34,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMr-JO-710">
-                                <rect key="frame" x="16" y="280.5" width="343" height="366.5"/>
+                                <rect key="frame" x="16" y="430.5" width="343" height="216.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQX-bV-kFe">
-                                <rect key="frame" x="16" y="252" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="402" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WBk-zH-Qtx">
-                                <rect key="frame" x="16" y="64" width="343" height="180"/>
+                                <rect key="frame" x="16" y="64" width="343" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-kn-8Ib">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-ae-Eht">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Kdt-gE-z0C"/>
+                                                </constraints>
                                                 <state key="normal" title="start next"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYW-bw-Axp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v62-9j-z0h">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="60"/>
                                                 <state key="normal" title="stop next"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5L-ET-E3R"/>
@@ -72,17 +75,20 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4P-4I-OvZ">
-                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="343" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VY-pl-QjV">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="pJX-zQ-Mou"/>
+                                                </constraints>
                                                 <state key="normal" title="start prev"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFu-Qx-tdd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmE-nf-J4N">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="60"/>
                                                 <state key="normal" title="stop prev"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xi4-Yu-53h"/>
@@ -94,17 +100,20 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hda-z3-zkh">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="343" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-QV-iK9">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="oYt-TA-36p"/>
+                                                </constraints>
                                                 <state key="normal" title="start init"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufQ-au-y6S"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waS-Al-zdb">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="60"/>
                                                 <state key="normal" title="stop init"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30j-Sd-94F"/>
@@ -116,17 +125,20 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-0d-eN8">
-                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="343" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUf-IU-e01">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="JAc-b9-rPH"/>
+                                                </constraints>
                                                 <state key="normal" title="start pause"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7u-3s-ald"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT3-i8-FIj">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="60"/>
                                                 <state key="normal" title="stop pause"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAL-FS-svg"/>
@@ -138,23 +150,26 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDV-Op-Ekv">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="240" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99D-xl-VQu">
-                                        <rect key="frame" x="0.0" y="150" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="270" width="343" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54X-mG-s0i">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="C3p-SW-2jN"/>
+                                                </constraints>
                                                 <state key="normal" title="start lbl"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9X-GD-aWD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meD-bl-WpR">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="60"/>
                                                 <state key="normal" title="stop lbl"/>
                                                 <connections>
                                                     <action selector="logButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O62-jr-8cZ"/>
@@ -167,17 +182,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-4L-Xmz">
+                                <rect key="frame" x="189" y="397" width="170" height="30"/>
+                                <state key="normal" title="empty log"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8a-St-F2l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="iOs-4L-Xmz" firstAttribute="trailing" secondItem="oQX-bV-kFe" secondAttribute="trailing" id="F9j-Fw-uR5"/>
                             <constraint firstItem="eMr-JO-710" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="IfJ-ze-i9U"/>
                             <constraint firstItem="oQX-bV-kFe" firstAttribute="top" secondItem="WBk-zH-Qtx" secondAttribute="bottom" constant="8" id="RKC-ce-9eB"/>
                             <constraint firstItem="WBk-zH-Qtx" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="RQn-Wv-boR"/>
                             <constraint firstItem="oQX-bV-kFe" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="16" id="T8k-Wj-fdb"/>
+                            <constraint firstItem="iOs-4L-Xmz" firstAttribute="centerY" secondItem="oQX-bV-kFe" secondAttribute="centerY" id="TJj-xD-EWK"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="eMr-JO-710" secondAttribute="bottom" constant="20" id="dcs-eW-D19"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="eMr-JO-710" secondAttribute="trailing" constant="16" id="f1o-kE-Mnc"/>
                             <constraint firstItem="eMr-JO-710" firstAttribute="top" secondItem="oQX-bV-kFe" secondAttribute="bottom" constant="8" id="f7r-Nf-05G"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="oQX-bV-kFe" secondAttribute="trailing" constant="16" id="khh-Hi-pNl"/>
+                            <constraint firstItem="iOs-4L-Xmz" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="189" id="rCp-P6-axY"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="WBk-zH-Qtx" secondAttribute="trailing" constant="16" id="tdE-uQ-6TM"/>
                             <constraint firstItem="WBk-zH-Qtx" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="zZx-ss-dgD"/>
                         </constraints>
@@ -207,7 +232,87 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="956" y="-399.85007496251876"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hcJ-oD-OhB">
+            <objects>
+                <viewController id="exX-5O-ciX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xf4-gd-fh7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="leV-5j-8tU">
+                                <rect key="frame" x="0.0" y="305.5" width="375" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqP-Jh-Rep">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="d0S-6O-7qv"/>
+                                        </constraints>
+                                        <state key="normal" title="Logging"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="WIt-a8-A0Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHH-cu-EBu">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Bj3-Kt-l10"/>
+                                        </constraints>
+                                        <state key="normal" title="Debug"/>
+                                        <connections>
+                                            <segue destination="nGh-M8-Gcx" kind="show" id="reD-7x-bMF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wvs-e6-4KC" firstAttribute="trailing" secondItem="leV-5j-8tU" secondAttribute="trailing" id="RuX-UA-O7m"/>
+                            <constraint firstItem="leV-5j-8tU" firstAttribute="centerY" secondItem="Wvs-e6-4KC" secondAttribute="centerY" id="mxQ-kp-ATr"/>
+                            <constraint firstItem="leV-5j-8tU" firstAttribute="leading" secondItem="Wvs-e6-4KC" secondAttribute="leading" id="ogg-ud-PZL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wvs-e6-4KC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ChG-lI-aBb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVe-Os-mRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2" y="134"/>
+        </scene>
+        <!--Debug View Controller-->
+        <scene sceneID="D0v-mZ-bWF">
+            <objects>
+                <viewController id="nGh-M8-Gcx" customClass="DebugViewController" customModule="Gestr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MTH-ia-soR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-kf-Ebq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xti-kG-asi" firstAttribute="bottom" secondItem="rvz-kf-Ebq" secondAttribute="bottom" constant="20" id="8Gd-Py-qaJ"/>
+                            <constraint firstItem="rvz-kf-Ebq" firstAttribute="top" secondItem="Xti-kG-asi" secondAttribute="top" id="JeD-Qq-koM"/>
+                            <constraint firstItem="rvz-kf-Ebq" firstAttribute="leading" secondItem="Xti-kG-asi" secondAttribute="leading" id="PPt-Dx-RX0"/>
+                            <constraint firstItem="Xti-kG-asi" firstAttribute="trailing" secondItem="rvz-kf-Ebq" secondAttribute="trailing" id="WSe-Rt-rih"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xti-kG-asi"/>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="rvz-kf-Ebq" id="6Up-an-j3N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9M-Xt-9bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.79999999999995" y="349.47526236881561"/>
         </scene>
     </scenes>
 </document>

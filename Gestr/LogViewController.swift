@@ -11,7 +11,8 @@ import UIKit
 class LogViewController: UIViewController, RecorderDelegate {
     
     let recorder = Recorder()
-
+    var updateLog = false
+    
     @IBOutlet weak var logView: UITextView!
     @IBOutlet weak var cusomLabel: UITextField!
     @IBOutlet weak var startNextButton: UIButton!
@@ -27,9 +28,10 @@ class LogViewController: UIViewController, RecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        recorder.delegate = self
         recorder.start()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,20 +75,39 @@ class LogViewController: UIViewController, RecorderDelegate {
     }
     
     @IBAction func share(_ sender: Any) {
-        let tmpcsvName = "tmp.csv"
-        if Utils.exists(file: tmpcsvName) {
-            try! Utils.delete(file: tmpcsvName)
-        }
-        let path = try! Utils.save(data: recorder.getCSV(), to: tmpcsvName)
-        let fileURL = URL(fileURLWithPath: path)
-        let objectsToShare = [fileURL]
+        let dataURL = create(tmpName: "data-tmp.csv", with: recorder.getDataCSV())
+        let labelsURL = create(tmpName: "labels-tmp.csv", with: recorder.getLabelsCSV())
+        let objectsToShare = [dataURL, labelsURL]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    func recorder(_ recorder: Recorder, received d: LabeledMotionData) {
-        self.logView.text = recorder.getCSV()
+    @IBAction func clear(_ sender: Any) {
+        recorder.clear()
+        updateLog = true
+        logView.text = recorder.getDataCSV()
+        updateLog = false
+    }
+    
+    func create(tmpName : String, with data : String) -> URL {
+        if Utils.exists(file: tmpName) {
+            try! Utils.delete(file: tmpName)
+        }
+        let path = try! Utils.save(data: data, to: tmpName)
+        let fileURL = URL(fileURLWithPath: path)
+        return fileURL
+    }
+    
+    func recorder(_ recorder: Recorder, received d: MotionData) {
+        if updateLog {
+            return
+        }
+        updateLog = true
+        DispatchQueue.main.async {
+            self.logView.text = recorder.getDataCSV()
+            self.updateLog = false
+        }
     }
 }
 

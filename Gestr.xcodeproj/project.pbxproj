@@ -18,6 +18,13 @@
 		58597B102028FEA1008AE580 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B0F2028FEA1008AE580 /* Session.swift */; };
 		58597B12202904B7008AE580 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B11202904B7008AE580 /* Recorder.swift */; };
 		58597B1420291E66008AE580 /* GestrUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58597B1320291E66008AE580 /* GestrUtils.swift */; };
+		58881511202B48BB00899BEE /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58881510202B48BB00899BEE /* Classifier.swift */; };
+		58881513202B60DE00899BEE /* MinMaxScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58881512202B60DE00899BEE /* MinMaxScaler.swift */; };
+		58881515202BAEF000899BEE /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58881514202BAEF000899BEE /* DebugViewController.swift */; };
+		58881525202CA93200899BEE /* linsvc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58881524202CA93200899BEE /* linsvc.mlmodel */; };
+		58881527202CB45500899BEE /* boost.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58881526202CB45400899BEE /* boost.mlmodel */; };
+		58A9D3DF204202C2004E5563 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A9D3DE204202C2004E5563 /* Math.swift */; };
+		58A9D3E12047EDBB004E5563 /* TransformToFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A9D3E02047EDBB004E5563 /* TransformToFeatures.swift */; };
 		A9327F9B1F936AF2000A2B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */; };
 		A9327F9D1F936AF2000A2B0B /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327F9C1F936AF2000A2B0B /* LogViewController.swift */; };
 		A9327FA01F936AF2000A2B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9327F9E1F936AF2000A2B0B /* Main.storyboard */; };
@@ -99,6 +106,13 @@
 		58597B0F2028FEA1008AE580 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		58597B11202904B7008AE580 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		58597B1320291E66008AE580 /* GestrUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestrUtils.swift; sourceTree = "<group>"; };
+		58881510202B48BB00899BEE /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		58881512202B60DE00899BEE /* MinMaxScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxScaler.swift; sourceTree = "<group>"; };
+		58881514202BAEF000899BEE /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		58881524202CA93200899BEE /* linsvc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = linsvc.mlmodel; sourceTree = "<group>"; };
+		58881526202CB45400899BEE /* boost.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = boost.mlmodel; sourceTree = "<group>"; };
+		58A9D3DE204202C2004E5563 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		58A9D3E02047EDBB004E5563 /* TransformToFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformToFeatures.swift; sourceTree = "<group>"; };
 		A9327F971F936AF2000A2B0B /* Gestr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9327F9C1F936AF2000A2B0B /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				58308CB020292A940024C0AA /* Gestr.entitlements */,
+				58881524202CA93200899BEE /* linsvc.mlmodel */,
+				58881526202CB45400899BEE /* boost.mlmodel */,
 				A9327F9A1F936AF2000A2B0B /* AppDelegate.swift */,
 				A9327F9C1F936AF2000A2B0B /* LogViewController.swift */,
 				A9327F9E1F936AF2000A2B0B /* Main.storyboard */,
@@ -195,6 +211,11 @@
 				58597B0F2028FEA1008AE580 /* Session.swift */,
 				58597B11202904B7008AE580 /* Recorder.swift */,
 				58597B1320291E66008AE580 /* GestrUtils.swift */,
+				58881510202B48BB00899BEE /* Classifier.swift */,
+				58881512202B60DE00899BEE /* MinMaxScaler.swift */,
+				58881514202BAEF000899BEE /* DebugViewController.swift */,
+				58A9D3DE204202C2004E5563 /* Math.swift */,
+				58A9D3E02047EDBB004E5563 /* TransformToFeatures.swift */,
 			);
 			path = Gestr;
 			sourceTree = "<group>";
@@ -350,6 +371,9 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
 							com.apple.HealthKit.watchos = {
 								enabled = 1;
 							};
@@ -420,13 +444,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58881511202B48BB00899BEE /* Classifier.swift in Sources */,
+				58881525202CA93200899BEE /* linsvc.mlmodel in Sources */,
+				58881527202CB45500899BEE /* boost.mlmodel in Sources */,
+				58A9D3DF204202C2004E5563 /* Math.swift in Sources */,
 				58597B092028F8E3008AE580 /* Data.swift in Sources */,
+				58A9D3E12047EDBB004E5563 /* TransformToFeatures.swift in Sources */,
 				58597B102028FEA1008AE580 /* Session.swift in Sources */,
 				A9327F9D1F936AF2000A2B0B /* LogViewController.swift in Sources */,
 				A9327FE11F936BE5000A2B0B /* DeviceMotionExtension.swift in Sources */,
+				58881515202BAEF000899BEE /* DebugViewController.swift in Sources */,
 				A9327F9B1F936AF2000A2B0B /* AppDelegate.swift in Sources */,
 				58597B12202904B7008AE580 /* Recorder.swift in Sources */,
 				A9327FE41F93708C000A2B0B /* Utils.swift in Sources */,
+				58881513202B60DE00899BEE /* MinMaxScaler.swift in Sources */,
 				58597B1420291E66008AE580 /* GestrUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

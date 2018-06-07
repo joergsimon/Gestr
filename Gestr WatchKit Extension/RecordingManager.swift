@@ -18,6 +18,7 @@ class RecordingManager : WorkoutManagerDelegate {
     let parentConnector = ParentConnector()
     var delegate : RecordingManagerDelegate?
     var isStarted = false
+    var originalDate: Date? = nil
     
     init() {
         workoutManager.delegate = self
@@ -31,10 +32,14 @@ class RecordingManager : WorkoutManagerDelegate {
     func stop() {
         workoutManager.stopWorkout()
         isStarted = false
+        originalDate = nil
     }
     
     func manager(_ manager: WorkoutManager, received data: CMDeviceMotion) {
-        let timestamp = data.timestamp
+        if originalDate == nil {
+            originalDate = Date(timeIntervalSinceNow: -data.timestamp)
+        }
+        let timestamp = Date(timeInterval: data.timestamp, since: originalDate!).timeIntervalSince1970
         let readings = data.vector()
         let d = MotionData(timestamp: timestamp, readings: readings)
         parentConnector.send(data: d)

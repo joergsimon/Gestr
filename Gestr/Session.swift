@@ -51,8 +51,40 @@ class Session: NSObject, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let data = message["Data"] as? MotionData {
-            delegate?.session(self, received: data)
+        if let data = message["data"] as? [Double] {
+            let md = MotionData.from(vector: data)
+            delegate?.session(self, received: md)
+        }
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if let payload = message["payload"] as? [[String : Any]] {
+            for m in payload {
+                if let data = m["data"] as? [Double] {
+                    let md = MotionData.from(vector: data)
+                    delegate?.session(self, received: md)
+                }
+            }
+            replyHandler(["status" : "ok"])
+        }
+    }
+    
+    func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
+        guard let json = try? JSONSerialization.jsonObject(with: messageData) as? [String : Any] else {
+            print("error, could not get json")
+            replyHandler(Data(base64Encoded: "error")!)
+            return
+        }
+        if let j = json, let payload = j["payload"] as? [[String : Any]] {
+            for m in payload {
+                if let data = m["data"] as? [Double] {
+                    let md = MotionData.from(vector: data)
+                    delegate?.session(self, received: md)
+                }
+            }
+            if let anser = try? JSONSerialization.data(withJSONObject: ["status" : "ok"]) {
+                replyHandler(anser)
+            }
         }
     }
     

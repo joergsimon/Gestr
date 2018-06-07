@@ -8,27 +8,27 @@
 
 import Foundation
 
-struct LabeledMotionData {
-    let timestamp : TimeInterval
-    let readings : [Double]
+struct Label {
+    let start : TimeInterval
+    let end : TimeInterval
     let label : String
     
     func csvLine() -> String {
-        let d = readings.flatMap {String($0)}.joined(separator: ",")
-        let line = "\(timestamp),\(d),\(label)"
+        let line = "\(start),\(end),\(label)"
         return line
     }
 }
 
 protocol RecorderDelegate {
-    func recorder(_ recorder: Recorder, received d: LabeledMotionData)
+    func recorder(_ recorder: Recorder, received d: MotionData)
 }
 
 class Recorder : SessionDelegate {
-    let defaultAnnotation = "none"
+    let defaultAnnotation = ("none", 0.0)
     let session = Session()
-    var data = [LabeledMotionData]()
-    var currentAnnotation = "none"
+    var data = [MotionData]()
+    var labels = [Label]()
+    var currentAnnotation = ("none", 0.0)
     var delegate : RecorderDelegate?
     
     init() {
@@ -42,21 +42,33 @@ class Recorder : SessionDelegate {
     }
     
     func session(_ session: Session, received d: MotionData) {
-        let ld = LabeledMotionData(timestamp: d.timestamp, readings: d.readings, label: currentAnnotation)
-        data.append(ld)
-        delegate?.recorder(self, received: ld)
+        data.append(d)
+        delegate?.recorder(self, received: d)
     }
     
     func startAnnotation(with label : String) {
-        currentAnnotation = label
+        if (currentAnnotation != defaultAnnotation && currentAnnotation.0 != label) {
+            stopAnnotation()
+        }
+        currentAnnotation = (label, Date().timeIntervalSince1970)
     }
     
     func stopAnnotation() {
-        currentAnnotation = defaultAnnotation
+        if (currentAnnotation != defaultAnnotation) {
+            labels.append(Label(start: currentAnnotation.1, end: Date().timeIntervalSince1970, label: currentAnnotation.0))
+            currentAnnotation = defaultAnnotation
+        }
     }
     
-    func getCSV() -> String {
-        let csv = data.flatMap { $0.csvLine() }.joined(separator: "\n")
+    func getDataCSV() -> String {
+        let d = data
+        let csv = d.flatMap { $0.csvLine() }.joined(separator: "\n")
+        return csv
+    }
+    
+    func getLabelsCSV() -> String {
+        let l = labels
+        let csv = l.flatMap { $0.csvLine() }.joined(separator: "\n")
         return csv
     }
     
